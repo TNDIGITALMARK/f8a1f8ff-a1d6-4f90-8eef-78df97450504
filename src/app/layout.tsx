@@ -1,25 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { QueryProvider } from "@/components/query-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "COWSDOM - Discover the World of Cows",
+  description: "Explore fascinating cow breeds, learn amazing facts, and discover the incredible world of cattle. Your ultimate resource for all things bovine.",
+  keywords: ["cows", "cattle", "breeds", "dairy", "beef", "facts", "farming", "agriculture"],
 };
 
 export default function RootLayout({
@@ -29,18 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <QueryProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="light"
+            enableSystem={false}
             disableTransitionOnChange
           >
             <TooltipProvider>
+              <Navigation />
               {children}
+              <Footer />
               <Toaster />
               <Sonner />
             </TooltipProvider>
