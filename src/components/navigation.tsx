@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const navigationItems = [
   { name: "Breeds", href: "/breeds" },
@@ -23,13 +24,15 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">🐄</span>
-            </div>
-            <span className="font-heading text-xl font-bold text-foreground">
-              COWSDOM
-            </span>
+          <Link href="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity">
+            <Image
+              src="/generated/cowsdom-logo.png"
+              alt="COWSDOM Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
