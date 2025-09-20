@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
+import { PhoenixTracker } from "@/components/PhoenixTracker";
 export const metadata: Metadata = {
   title: "COWSDOM - Discover the World of Cows",
   description: "Explore fascinating cow breeds, learn amazing facts, and discover the incredible world of cattle. Your ultimate resource for all things bovine.",
@@ -37,7 +38,8 @@ export default function RootLayout({
               <Sonner />
             </TooltipProvider>
           </ThemeProvider>
-        </QueryProvider>
+        </QueryProvider>        <PhoenixTracker />
+
       </body>
     </html>
   );
