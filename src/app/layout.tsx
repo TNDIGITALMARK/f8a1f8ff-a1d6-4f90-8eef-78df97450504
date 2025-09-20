@@ -38,7 +38,8 @@ export default function RootLayout({
               <Sonner />
             </TooltipProvider>
           </ThemeProvider>
-        </QueryProvider>        <PhoenixTracker />
+        </QueryProvider>        <PhoenixTracker />        <PhoenixTracker />
+
 
       </body>
     </html>
